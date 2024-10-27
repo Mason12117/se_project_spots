@@ -10,9 +10,11 @@
   row-gap: 40px;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 636px) {
   .cards {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
   }
 }

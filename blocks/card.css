@@ -15,20 +15,20 @@
 }
 
 .card__caption {
+  margin: 12px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
 .card__caption-description {
-  margin: 12px 0 0;
+  margin: 0;
   color: black;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
   max-width: 353px;
 }
 
@@ -37,6 +37,8 @@
   border: none;
   padding: 0;
   margin: 0;
+  width: 23px;
+  height: 20px;
 }
 
 .card__caption-icon {
@@ -51,7 +53,7 @@
   cursor: pointer;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 636px) {
   .card {
     max-width: 288px;
     min-height: 318px;
@@ -63,5 +65,15 @@
 
   .card__caption-description {
     font-size: 16px;
+  }
+
+  .card__caption-icon-button {
+    width: 20px;
+    height: 18px;
+  }
+
+  .card__caption-icon {
+    width: 20px;
+    height: 18px;
   }
 }

@@ -1,21 +1,17 @@
-# Project 3: Spots
+# Sprint 3 Project Spots
 
-### Overview  
+### Links
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+- [Link to my project on Git hub Pages](https://mason12117.github.io/se_project_spots/)
+
+- [Link to my video on Google drive]()
+
+### Project Information
+
+This is a project to demonstrate adaptive web page development and showcases the uses of the media query to make responsive layouts. It also is my first time working from a Figma Design.
+
+This was made purely with HTML and CSS. Although it is not fully functional, it shows how the design should look once functional.
+
+In the future, I may try to integrate flexbox into the card layout in place of grid to try to make things look a little better.
+
+## Mason
