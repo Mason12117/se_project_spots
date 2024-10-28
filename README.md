@@ -4,7 +4,7 @@
 
 - [Link to my project on Git hub Pages](https://mason12117.github.io/se_project_spots/)
 
-- [Link to my video on Google drive]()
+- [Link to my video on Google drive](https://drive.google.com/file/d/1qAlhvwEwp6KxlBXbywp7MGk93M2jWbPy/view?usp=sharing)
 
 ### Project Information
 
