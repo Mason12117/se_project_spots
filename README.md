@@ -14,4 +14,8 @@ This was made purely with HTML and CSS. Although it is not fully functional, it 
 
 In the future, I may try to integrate flexbox into the card layout in place of grid to try to make things look a little better.
 
-## Mason
+### Added from Project 4 stage 1
+
+Knowledge from the first part of sprint 4 has been used to add the beginnings of what will be posts that load dynamically from an array of objects referencing links, as oppose to static html.
+
+#### Mason
