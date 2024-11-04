@@ -25,13 +25,59 @@ const initialCards = [
   },
 ];
 
-let editModal = document.querySelector("#edit-modal");
-let editProfileBtn = document.querySelector(".profile__button-edit");
-let closeProfileBtn = document.querySelector(".modal__button-exit");
+let inputName = document.querySelector(".modal__input_type_name");
+let inputDescription = document.querySelector(".modal__input_type_description");
+let displayName = document.querySelector(".profile__name");
+let displayDescription = document.querySelector(".profile__description");
 
-editProfileBtn.addEventListener("click", toggleEditModal);
-closeProfileBtn.addEventListener("click", toggleEditModal);
+const editForm = document.querySelector(".modal__form");
+const editModal = document.querySelector("#edit-modal");
+const editProfileBtn = document.querySelector(".profile__button-edit");
+const closeProfileBtn = document.querySelector(".modal__button-exit");
+const submitProfileBtn = document.querySelector(".modal__button-submit");
 
-function toggleEditModal() {
-  editModal.classList.toggle("modal_opened");
+function updateProfile(evt) {
+  evt.preventDefault();
+  displayName.textContent = inputName.value;
+  displayDescription.textContent = inputDescription.value;
+  exitEditModal();
 }
+
+function populateFields() {
+  inputName.value = displayName.textContent;
+  inputDescription.value = displayDescription.textContent;
+}
+
+function openEditModal() {
+  editModal.classList.add("modal_opened");
+  populateFields();
+}
+
+function exitEditModal() {
+  editModal.classList.remove("modal_opened");
+}
+
+function getCardElement(data) {
+  let cardTemplate = document.querySelector("#card-template");
+  let cardElement = cardTemplate.content.cloneNode(true);
+
+  cardElement.querySelector(".card__image").src = data.link;
+  cardElement.querySelector(".card__image").alt = data.name;
+  cardElement.querySelector(".card__caption-description").textContent =
+    data.name;
+
+  return cardElement;
+}
+
+function renderInitialCards() {
+  for (let initialCard of initialCards) {
+    let cardElement = getCardElement(initialCard);
+    document.querySelector(".cards").appendChild(cardElement);
+  }
+}
+
+renderInitialCards();
+
+editProfileBtn.addEventListener("click", openEditModal);
+closeProfileBtn.addEventListener("click", exitEditModal);
+editForm.addEventListener("submit", updateProfile);

@@ -47,112 +47,21 @@
         </section>
 
         <section class="cards">
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Val Thorens"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">Val Thorens</h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
+          <template id="card-template">
+            <div class="card">
+              <img class="card__image" src="" alt="" />
+              <div class="card__caption">
+                <h2 class="card__caption-description"></h2>
+                <button type="button" class="card__caption-icon-button">
+                  <img
+                    class="card__caption-icon"
+                    src="images/like-icon.svg"
+                    alt="Like icon"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="Restaurant terrace"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">Restaurant terrace</h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="An outdoor cafe"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">An outdoor cafe</h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="Bridge"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">
-                A very long bridge, over the forest...
-              </h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="Tunnel"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">
-                Tunnel with morning light
-              </h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="Mountain house"
-            />
-            <div class="card__caption">
-              <h2 class="card__caption-description">Mountain house</h2>
-              <button type="button" class="card__caption-icon-button">
-                <img
-                  class="card__caption-icon"
-                  src="images/like-icon.svg"
-                  alt="Like icon"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">
@@ -169,7 +78,7 @@
                 <input
                   id="name"
                   type="text"
-                  class="modal__input"
+                  class="modal__input modal__input_type_name"
                   placeholder="Type your name"
               /></label>
               <label for="description" class="modal__label"
@@ -177,7 +86,7 @@
                 <input
                   id="description"
                   type="text"
-                  class="modal__input"
+                  class="modal__input modal__input_type_description"
                   placeholder="Describe yourself"
               /></label>
               <button type="submit" class="modal__button-submit">Save</button>
