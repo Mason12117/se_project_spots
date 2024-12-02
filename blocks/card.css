@@ -63,30 +63,29 @@
   margin: 0;
   width: 23px;
   height: 20px;
-}
-
-.card__like-icon_not-liked {
-  width: 23px;
-  height: 20px;
-  object-fit: cover;
-  opacity: 0.7;
-}
-
-.card__like-icon_not-liked:hover {
-  opacity: 1;
   cursor: pointer;
 }
 
-.card__like-icon_is-liked {
-  width: 23px;
-  height: 20px;
+.card__like-btn_not-liked {
+  background-size: cover;
   object-fit: cover;
+  opacity: 0.7;
+  background-image: url("../images/like-icon.svg");
+  transition: opacity 0.3s ease;
+}
+
+.card__like-btn_not-liked:hover {
   opacity: 1;
 }
 
-.card__like-icon_is-liked:hover {
+.card__like-btn_is-liked {
+  opacity: 1;
+  background-image: url("../images/liked-icon.svg");
+  transition: opacity 0.3s ease;
+}
+
+.card__like-btn_is-liked:hover {
   opacity: 0.7;
-  cursor: pointer;
 }
 
 @media all and (max-width: 636px) {
