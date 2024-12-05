@@ -100,6 +100,7 @@
 
   .card__caption-description {
     font-size: 16px;
+    max-width: calc(100% - 23px);
   }
 
   .card__like-icon_not-liked {
