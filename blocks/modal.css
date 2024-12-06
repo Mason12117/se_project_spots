@@ -45,16 +45,38 @@
 
 .modal__button-exit {
   background-color: transparent;
-  background-image: url(../images/close-icon.svg);
-  opacity: 0.4;
   width: 40px;
   height: 40px;
   margin: 0;
   padding: 0;
   border: none;
+}
+
+.modal__button-exit_type_inside {
+  background-image: url(../images/close-icon.svg);
+  opacity: 0.4;
+  margin: 0;
+  padding: 0;
   position: absolute;
   top: 32px;
   right: 50px;
+}
+
+.modal__button-exit_type_inside:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.modal__button-exit_type_outside {
+  background-image: url(../images/close-icon-post.svg);
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.modal__button-exit_type_outside:hover {
+  cursor: pointer;
+  opacity: 0.4;
 }
 
 .modal__form {
@@ -71,11 +93,6 @@
   padding: 104px 50px;
   border: none;
   max-width: 100%;
-}
-
-.modal__button-exit:hover {
-  cursor: pointer;
-  opacity: 1;
 }
 
 .modal__label {

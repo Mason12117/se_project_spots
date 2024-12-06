@@ -48,18 +48,24 @@ const closePostBtn = postModal.querySelector(".modal__button-exit");
 const submitPostBtn = postModal.querySelector(".modal__button-submit");
 
 const viewModal = document.querySelector("#view-modal");
-const closeViewBtn = viewModal.querySelector(".post__exit-btn");
+const closeViewBtn = viewModal.querySelector(".modal__button-exit");
 
 const viewedImage = viewModal.querySelector(".post__image");
 const viewedCaption = viewModal.querySelector(".post__caption");
 
 const cards = document.querySelector(".cards");
 
+const closeBtns = document.querySelectorAll(".modal__button-exit");
+
+closeBtns.forEach(function (closeBtn) {
+  closeBtn.addEventListener("click", closeModal);
+});
+
 function updateProfile(event) {
   event.preventDefault();
   displayName.textContent = inputName.value;
   displayDescription.textContent = inputDescription.value;
-  closeModal(editModal);
+  closeModal();
 }
 
 function populateProfileFields() {
@@ -71,8 +77,9 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+function closeModal() {
+  const openedModal = document.querySelector(".modal_opened");
+  openedModal.classList.remove("modal_opened");
 }
 
 function openViewModal(event) {
@@ -137,11 +144,11 @@ function addPost(event) {
 
   inputLink.value = "";
   inputCaption.value = "";
-  closeModal(postModal);
+  closeModal();
 }
 
 initialCards.forEach(function (initialCard) {
-  let cardElement = getCardElement(initialCard);
+  const cardElement = getCardElement(initialCard);
   cards.appendChild(cardElement);
 });
 
@@ -149,19 +156,9 @@ editProfileBtn.addEventListener("click", function () {
   openModal(editModal);
   populateProfileFields();
 });
-closeProfileBtn.addEventListener("click", function () {
-  closeModal(editModal);
-});
 editForm.addEventListener("submit", updateProfile);
 
 newPostBtn.addEventListener("click", function () {
   openModal(postModal);
 });
-closePostBtn.addEventListener("click", function () {
-  closeModal(postModal);
-});
 postForm.addEventListener("submit", addPost);
-
-closeViewBtn.addEventListener("click", function () {
-  closeModal(viewModal);
-});
