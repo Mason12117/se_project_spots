@@ -168,6 +168,10 @@
     right: 12px;
   }
 
+  .modal__button-exit_type_outside {
+    align-self: flex-end;
+  }
+
   .modal__form {
     height: 336px;
     max-width: 300px;
