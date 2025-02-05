@@ -25,6 +25,8 @@ const initialCards = [
   },
 ];
 
+let editBool = true;
+
 const inputName = document.querySelector(".modal__input_type_name");
 const inputDescription = document.querySelector(
   ".modal__input_type_description"
@@ -58,28 +60,67 @@ const cards = document.querySelector(".cards");
 const closeBtns = document.querySelectorAll(".modal__button-exit");
 
 closeBtns.forEach(function (closeBtn) {
-  closeBtn.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", function () {
+    editBool = false;
+    closeModal();
+  });
 });
 
 function updateProfile(event) {
   event.preventDefault();
   displayName.textContent = inputName.value;
   displayDescription.textContent = inputDescription.value;
+  editBool = true;
   closeModal();
+  editBool = false;
+}
+
+function toggleButtonState(inputList, buttonElement) {
+  if (inputList.some((input) => !input.validity.valid)) {
+    buttonElement.classList.add("button_inactive");
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.classList.remove("button_inactive");
+    buttonElement.disabled = false;
+  }
 }
 
 function populateProfileFields() {
-  inputName.value = displayName.textContent;
-  inputDescription.value = displayDescription.textContent;
+  if (editBool) {
+    inputName.value = displayName.textContent;
+    inputDescription.value = displayDescription.textContent;
+
+    const inputList = [inputName, inputDescription];
+    toggleButtonState(inputList, submitProfileBtn);
+  }
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", keyModalClosure);
+  modal.addEventListener("click", overlayModalClosure);
+  modal.querySelector(".modal__container").addEventListener("click", (evt) => {
+    evt.stopPropagation();
+  });
 }
 
 function closeModal() {
   const openedModal = document.querySelector(".modal_opened");
   openedModal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", keyModalClosure);
+  openedModal.removeEventListener("click", overlayModalClosure);
+}
+
+function keyModalClosure(evt) {
+  if (evt.key === "Escape") {
+    editBool = false;
+    closeModal();
+  }
+}
+
+function overlayModalClosure(evt) {
+  editBool = false;
+  closeModal();
 }
 
 function openViewModal(event) {
