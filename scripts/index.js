@@ -75,23 +75,14 @@ function updateProfile(event) {
   editBool = false;
 }
 
-function toggleButtonState(inputList, buttonElement) {
-  if (inputList.some((input) => !input.validity.valid)) {
-    buttonElement.classList.add("button_inactive");
-    buttonElement.disabled = true;
-  } else {
-    buttonElement.classList.remove("button_inactive");
-    buttonElement.disabled = false;
-  }
-}
-
 function populateProfileFields() {
   if (editBool) {
     inputName.value = displayName.textContent;
     inputDescription.value = displayDescription.textContent;
 
     const inputList = [inputName, inputDescription];
-    toggleButtonState(inputList, submitProfileBtn);
+    const buttonElement = editForm.querySelector(".modal__button-submit");
+    toggleButtonState(inputList, buttonElement, settings);
   }
 }
 
