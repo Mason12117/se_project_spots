@@ -90,9 +90,12 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", keyModalClosure);
   modal.addEventListener("click", overlayModalClosure);
-  modal.querySelector(".modal__container").addEventListener("click", (evt) => {
-    evt.stopPropagation();
-  });
+  const modalContainer = modal.querySelector(".modal__container");
+  if (modalContainer) {
+    modalContainer.addEventListener("click", (evt) => {
+      evt.stopPropagation();
+    });
+  }
 }
 
 function closeModal() {
